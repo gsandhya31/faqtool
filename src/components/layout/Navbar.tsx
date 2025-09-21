@@ -18,7 +18,7 @@ export const Navbar = () => {
           <div className="w-8 h-8 bg-primary rounded-md flex items-center justify-center">
             <span className="text-primary-foreground font-bold text-sm">FAQ</span>
           </div>
-          <h1 className="text-xl font-semibold text-foreground">FAQ Tool</h1>
+          <h1 className="text-xl font-semibold text-foreground">FAQ aTool</h1>
         </div>
       </div>
 
