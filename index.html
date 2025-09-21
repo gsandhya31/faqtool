@@ -15,10 +15,15 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@lovable_dev" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <!-- favicon (use Vite base) -->
+    <link rel="icon" href="%BASE_URL%favicon.ico" />
   </head>
 
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- use Vite's BASE_URL placeholder so built HTML points to /faqtool/... -->
+    <script type="module" src="%BASE_URL%src/main.tsx"></script>
   </body>
 </html>
