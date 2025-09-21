@@ -5,9 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // <--- add this line:
-  base: '/faqtool/',
-  
+  base: '/faqtool/',   // needed for GitHub Pages
+
   server: {
     host: "::",
     port: 8080,
@@ -17,5 +16,10 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+  },
+
+  // 👇 add this block
+  build: {
+    sourcemap: true,
   },
 }));
