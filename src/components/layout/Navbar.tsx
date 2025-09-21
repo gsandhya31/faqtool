@@ -18,7 +18,7 @@ export const Navbar = () => {
           <div className="w-8 h-8 bg-primary rounded-md flex items-center justify-center">
             <span className="text-primary-foreground font-bold text-sm">FAQ</span>
           </div>
-          <h1 className="text-xl font-semibold text-foreground">FAQ aTool</h1>
+          <h1 className="text-xl font-semibold text-foreground">FAQ Tool</h1>
         </div>
       </div>
 
@@ -28,10 +28,7 @@ export const Navbar = () => {
           <div className="text-xs text-muted-foreground">{currentUser.email}</div>
         </div>
 
-        <Button variant="outline" size="sm" onClick={toggleRole} className="flex items-center gap-2">
-          {currentRole === 'admin' ? <Shield className="w-4 h-4" /> : <User className="w-4 h-4" />}
-          <span className="text-xs">Switch to {currentRole === 'admin' ? 'User' : 'Admin'}</span>
-        </Button>
+        
 
         <Badge variant={currentRole === 'admin' ? 'destructive' : 'secondary'}>
           {currentRole.toUpperCase()}
