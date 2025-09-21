@@ -3,22 +3,22 @@ import { Badge } from "@/components/ui/badge";
 import { useApp } from "@/context/AppContext";
 import { UserRole } from "@/types";
 import { Settings, User, Shield } from "lucide-react";
-
 export const Navbar = () => {
-  const { currentUser, currentRole, setCurrentRole } = useApp();
-
+  const {
+    currentUser,
+    currentRole,
+    setCurrentRole
+  } = useApp();
   const toggleRole = () => {
     setCurrentRole(currentRole === 'admin' ? 'user' : 'admin');
   };
-
-  return (
-    <nav className="bg-card border-b border-border px-6 py-4 flex items-center justify-between">
+  return <nav className="bg-card border-b border-border px-6 py-4 flex items-center justify-between">
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-primary rounded-md flex items-center justify-center">
             <span className="text-primary-foreground font-bold text-sm">FAQ</span>
           </div>
-          <h1 className="text-xl font-semibold text-foreground">Channel FAQ Tool</h1>
+          <h1 className="text-xl font-semibold text-foreground">FAQ Tool</h1>
         </div>
       </div>
 
@@ -28,12 +28,7 @@ export const Navbar = () => {
           <div className="text-xs text-muted-foreground">{currentUser.email}</div>
         </div>
 
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={toggleRole}
-          className="flex items-center gap-2"
-        >
+        <Button variant="outline" size="sm" onClick={toggleRole} className="flex items-center gap-2">
           {currentRole === 'admin' ? <Shield className="w-4 h-4" /> : <User className="w-4 h-4" />}
           <span className="text-xs">Switch to {currentRole === 'admin' ? 'User' : 'Admin'}</span>
         </Button>
@@ -42,6 +37,5 @@ export const Navbar = () => {
           {currentRole.toUpperCase()}
         </Badge>
       </div>
-    </nav>
-  );
+    </nav>;
 };

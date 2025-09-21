@@ -2,12 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { Plus, Upload, Rocket, TrendingUp } from "lucide-react";
-
 const Dashboard = () => {
   const navigate = useNavigate();
-
-  return (
-    <div className="p-6 space-y-6">
+  return <div className="p-6 space-y-6">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold text-foreground">Dashboard</h1>
@@ -77,31 +74,17 @@ const Dashboard = () => {
         </CardHeader>
         <CardContent>
           <div className="flex flex-wrap gap-4">
-            <Button 
-              onClick={() => navigate('/faqs/new')}
-              className="flex items-center gap-2"
-            >
+            <Button onClick={() => navigate('/faqs/new')} className="flex items-center gap-2">
               <Plus className="w-4 h-4" />
               New FAQ
             </Button>
             
-            <Button 
-              variant="outline"
-              onClick={() => navigate('/bulk-upload')}
-              className="flex items-center gap-2"
-            >
+            <Button variant="outline" onClick={() => navigate('/bulk-upload')} className="flex items-center gap-2">
               <Upload className="w-4 h-4" />
               Bulk Upload
             </Button>
             
-            <Button 
-              variant="outline"
-              onClick={() => navigate('/publish-queue')}
-              className="flex items-center gap-2"
-            >
-              <Rocket className="w-4 h-4" />
-              Publish Queue
-            </Button>
+            
           </div>
         </CardContent>
       </Card>
@@ -139,8 +122,6 @@ const Dashboard = () => {
           </div>
         </CardContent>
       </Card>
-    </div>
-  );
+    </div>;
 };
-
 export default Dashboard;
