@@ -5,20 +5,24 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/faqtool/',   // needed for GitHub Pages
+  // Use root (/) during dev / Lovable preview, but the repo path on production builds.
+  // Vite sets `mode` to "production" for production builds, so:
+  base: mode === "production" ? "/faqtool/" : "/",
 
   server: {
     host: "::",
     port: 8080,
   },
+
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
 
-  // 👇 add this block
+  // helpful for debugging production errors (optional)
   build: {
     sourcemap: true,
   },
